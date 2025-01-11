@@ -1,0 +1,99 @@
+/* Setăm un background cu imagine specificată */
+.homepage-container {
+  background-image: url('../assets/images/f1-background.jpg');
+
+
+  background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  /* Conținutul paginii */
+  .homepage-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond transparent peste imagine */
+    padding: 90px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+
+  /* Titlul principal */
+  .homepage-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  
+  /* Descriere Formula 1 */
+  .homepage-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Text explicativ pentru simulare */
+  .simulation-section {
+    margin-bottom: 30px;
+  }
+  
+  .simulation-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Buton principal */
+  .homepage-container .button-primary {
+    background-color: #ff1801;
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+  }
+  
+  .button-primary:hover {
+    background-color: #ffffff;
+    color: #ff1801;
+    box-shadow: 0px 0px 10px rgba(255, 24, 1, 0.5);
+  }
+  
+  /* Buton secundar */
+  .button-secondary {
+    background-color: #ffffff;
+    color: #101010;
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .button-secondary:hover {
+    background-color: #ff1801;
+    color: #ffffff;
+  }
+  
+  /* Alinierea generală */
+  .info-section {
+    margin-top: 20px;
+  }
+  

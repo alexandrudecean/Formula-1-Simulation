@@ -1,0 +1,82 @@
+[
+    {
+      "team": "Mercedes",
+      "models": [
+        { "name": "W14", "power": 1060, "weight": 798 },
+        { "name": "W13", "power": 1040, "weight": 798 },
+        { "name": "W12", "power": 1015, "weight": 753 }
+      ]
+    },
+    {
+      "team": "Red Bull Racing",
+      "models": [
+        { "name": "RB19", "power": 1080, "weight": 798 },
+        { "name": "RB18", "power": 1065, "weight": 800 },
+        { "name": "RB16B", "power": 1045, "weight": 755 }
+      ]
+    },
+    {
+      "team": "Ferrari",
+      "models": [
+        { "name": "SF-23", "power": 1055, "weight": 799 },
+        { "name": "F1-75", "power": 1035, "weight": 801 },
+        { "name": "SF21", "power": 1010, "weight": 754 }
+      ]
+    },
+    {
+      "team": "McLaren",
+      "models": [
+        { "name": "MCL60", "power": 1040, "weight": 800 },
+        { "name": "MCL36", "power": 1030, "weight": 802 },
+        { "name": "MCL35M", "power": 1015, "weight": 756 }
+      ]
+    },
+    {
+      "team": "Alpine",
+      "models": [
+        { "name": "A523", "power": 1035, "weight": 800 },
+        { "name": "A522", "power": 1025, "weight": 801 },
+        { "name": "A521", "power": 1010, "weight": 757 }
+      ]
+    },
+    {
+      "team": "Aston Martin",
+      "models": [
+        { "name": "AMR23", "power": 1045, "weight": 799 },
+        { "name": "AMR22", "power": 1030, "weight": 801 },
+        { "name": "AMR21", "power": 1015, "weight": 755 }
+      ]
+    },
+    {
+      "team": "Haas",
+      "models": [
+        { "name": "VF-23", "power": 1030, "weight": 799 },
+        { "name": "VF-22", "power": 1020, "weight": 800 },
+        { "name": "VF-21", "power": 1005, "weight": 753 }
+      ]
+    },
+    {
+      "team": "Kick Sauber",
+      "models": [
+        { "name": "C43", "power": 1040, "weight": 800 },
+        { "name": "C42", "power": 1030, "weight": 801 },
+        { "name": "C41", "power": 1015, "weight": 755 }
+      ]
+    },
+    {
+      "team": "RB",
+      "models": [
+        { "name": "AT04", "power": 1035, "weight": 800 },
+        { "name": "AT03", "power": 1025, "weight": 802 },
+        { "name": "AT02", "power": 1010, "weight": 756 }
+      ]
+    },
+    {
+      "team": "Williams",
+      "models": [
+        { "name": "FW45", "power": 1025, "weight": 799 },
+        { "name": "FW44", "power": 1015, "weight": 800 },
+        { "name": "FW43B", "power": 1005, "weight": 753 }
+      ]
+    }
+]

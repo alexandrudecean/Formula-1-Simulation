@@ -1,0 +1,122 @@
+[
+  {
+      "name": "Silverstone",
+      "length_km": 5.891,
+      "turns": 18,
+      "drs_zones": 2
+  },
+  {
+      "name": "Monaco",
+      "length_km": 3.337,
+      "turns": 19,
+      "drs_zones": 1
+  },
+  {
+      "name": "Spa-Francorchamps",
+      "length_km": 7.004,
+      "turns": 20,
+      "drs_zones": 2
+  },
+  {
+      "name": "Monza",
+      "length_km": 5.793,
+      "turns": 11,
+      "drs_zones": 2
+  },
+  {
+      "name": "Suzuka",
+      "length_km": 5.807,
+      "turns": 18,
+      "drs_zones": 1
+  },
+  {
+      "name": "Circuit of the Americas",
+      "length_km": 5.513,
+      "turns": 20,
+      "drs_zones": 2
+  },
+  {
+      "name": "Yas Marina",
+      "length_km": 5.281,
+      "turns": 16,
+      "drs_zones": 2
+  },
+  {
+      "name": "Interlagos",
+      "length_km": 4.309,
+      "turns": 15,
+      "drs_zones": 2
+  },
+  {
+      "name": "Bahrain",
+      "length_km": 5.412,
+      "turns": 15,
+      "drs_zones": 3
+  },
+  {
+      "name": "Hungaroring",
+      "length_km": 4.381,
+      "turns": 14,
+      "drs_zones": 1
+  },
+  {
+      "name": "Marina Bay",
+      "length_km": 4.940,
+      "turns": 23,
+      "drs_zones": 2
+  },
+  {
+      "name": "Zandvoort",
+      "length_km": 4.259,
+      "turns": 14,
+      "drs_zones": 2
+  },
+  {
+      "name": "Imola",
+      "length_km": 4.909,
+      "turns": 19,
+      "drs_zones": 1
+  },
+  {
+      "name": "Catalunya",
+      "length_km": 4.675,
+      "turns": 16,
+      "drs_zones": 2
+  },
+  {
+      "name": "Jeddah",
+      "length_km": 6.174,
+      "turns": 27,
+      "drs_zones": 3
+  },
+  {
+      "name": "Miami",
+      "length_km": 5.412,
+      "turns": 19,
+      "drs_zones": 3
+  },
+  {
+      "name": "Las Vegas",
+      "length_km": 6.120,
+      "turns": 17,
+      "drs_zones": 2
+  },
+  {
+      "name": "Austria (Red Bull Ring)",
+      "length_km": 4.318,
+      "turns": 10,
+      "drs_zones": 3
+  },
+  {
+      "name": "Baku",
+      "length_km": 6.003,
+      "turns": 20,
+      "drs_zones": 2
+  },
+  {
+      "name": "Canada (Circuit Gilles Villeneuve)",
+      "length_km": 4.361,
+      "turns": 14,
+      "drs_zones": 3
+  }
+]

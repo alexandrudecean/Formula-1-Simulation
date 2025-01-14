@@ -61,3 +61,15 @@ De asemenea, aplicația oferă informații detaliate despre piloții și circuit
     - React Multi Carousel
     - Axios
 3. Fonturi: Google Fonts - Poppins
+
+## Screenshots
+
+### Pagina principală
+![Pagina principală](screenshots/homepage.png)
+
+### Pagina de simulare
+![Pagina de simulare](screenshots/simulationpage.png)
+
+### Pagina de informatii
+![Pagina de informatii](screenshots/infopage1.png)
+![Pagina de informatii](screenshots/infopage2.png)

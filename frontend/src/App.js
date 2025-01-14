@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import SimulationPage from "./pages/SimulationPage";
@@ -14,9 +15,24 @@ const App = () => {
           <img src="/images/F1-logo.png" alt="Formula 1 Logo" />
         </div>
         <nav className="navbar-links">
-          <Link to="/">Acasă</Link>
-          <Link to="/simulate">Simulare</Link>
-          <Link to="/info">Informații</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+          >
+            Acasă
+          </NavLink>
+          <NavLink
+            to="/simulate"
+            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+          >
+            Simulare
+          </NavLink>
+          <NavLink
+            to="/info"
+            className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
+          >
+            Informații
+          </NavLink>
         </nav>
       </header>
       <main>

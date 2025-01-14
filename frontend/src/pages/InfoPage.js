@@ -1,5 +1,4 @@
-import React from "react";
-import "./InfoPage.css";
+import React, { useEffect, useState } from "react";import "./InfoPage.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -18,6 +17,18 @@ const circuitData = [
 ];
 
 const InfoPage = () => {
+  const [drivers, setDrivers] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/drivers")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data); // Logăm datele pentru a verifica structura
+        setDrivers(data);
+      })
+      .catch((err) => console.error("Eroare la preluarea datelor despre piloți", err));
+  }, []);
+
   return (
     <div className="info-container">
       <h1>Informații</h1>
@@ -108,7 +119,7 @@ const InfoPage = () => {
             tablet: { breakpoint: { max: 1024, min: 464 }, items: 1 },
             mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
           }}
-          showDots={true}
+          showDots={false}
           slidesToSlide={1}
         >
           {circuitData.map((circuit, index) => (
@@ -119,6 +130,37 @@ const InfoPage = () => {
           ))}
         </Carousel>
       </section>
+
+      {/* Tabel piloți */}
+      <section className="drivers-section">
+        <h2>Piloți Formula 1 (Ultimii 3 ani)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nume</th>
+              <th>Naționalitate</th>
+              <th>Data nașterii</th>
+              <th>Link Wikipedia</th>
+            </tr>
+          </thead>
+          <tbody>
+            {drivers.map((driver, index) => (
+              <tr key={index}>
+                <td>{`${driver.givenName} ${driver.familyName}`}</td>
+                <td>{driver.nationality || "N/A"}</td>
+                <td>{driver.dateOfBirth || "N/A"}</td>
+                <td>
+                  <a href={driver.url} target="_blank" rel="noopener noreferrer">
+                    Wikipedia
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+      </section>
+
     </div>
   );
 };

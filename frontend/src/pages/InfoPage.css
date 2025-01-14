@@ -1,4 +1,8 @@
-/* Titlu Principal */
+.info-container {
+  width: 100%;
+  max-width: none;
+}
+
 .info-container h1 {
   font-size: 3rem;
   font-weight: bold;
@@ -7,7 +11,6 @@
   margin-top: 50px;
 }
 
-/* Carousel - Pneuri */
 .tires-section {
   margin-bottom: 60px;
   text-align: center;
@@ -38,6 +41,7 @@
 }
 
 .carousel-arrow {
+  position: relative; 
   z-index: 5; 
 }
 
@@ -65,6 +69,7 @@
   max-width: 1000px; 
   margin: 0 auto; 
   margin-bottom: 40px;
+  transform: translateX(-180px) 
 }
 
 .downforce-text {
@@ -86,11 +91,11 @@
   border-radius: 10px;
 }
 
-/* Condiții Meteo */
 .weather-content {
   display: flex;
   justify-content: space-around;
   gap: 40px; 
+  transform: translateX(-110px) 
 }
 
 .weather-section h2 {
@@ -112,11 +117,17 @@
   font-size: 1.3rem; 
 }
 
-/* Circuite Section */
-.circuits-content {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 40px;
+.carousel-arrow {
+  position: relative;
+  z-index: 5;
+  margin: 0 20px;
+}
+
+.circuits-section {
+  width: 100%; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding-bottom: 100px; 
 }
 
 .circuits-section h2 {
@@ -124,11 +135,11 @@
   margin-bottom: 50px;
   text-align: center;
   font-weight: bold;
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
 }
 
 .circuit-card img {
-  width: 120%;
+  width: 90%; 
   height: auto;
   margin: 0 auto;
   border-radius: 10px;
@@ -140,3 +151,43 @@
   text-align: center;
   margin-bottom: 60px;
 }
+
+.circuits-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; 
+}
+
+.drivers-section {
+  padding-bottom: 50px; 
+}
+
+.drivers-section h2{
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  color: #e5e5e5;
+  
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #ff1500;
+  color: #ffffff;
+  font-weight: bold;
+}
+

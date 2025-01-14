@@ -6,7 +6,7 @@ const teams = require("../data/teams.json");
 router.post("/", (req, res) => {
   const { team, model, downforce, circuit, weather, tires } = req.body;
 
-  // Selectare echipă și model
+  // Selectare echipă si model
   const selectedTeam = teams.find((t) => t.team === team);
   if (!selectedTeam) {
     return res.status(400).json({ error: "Echipă invalidă" });
@@ -27,35 +27,33 @@ router.post("/", (req, res) => {
 
   const { length_km, turns, drs_zones } = selectedCircuit;
 
-  // Factori ajustabili
-  const weatherPenalty = weather === "ploaie" ? 0.95 : 1.0; // Viteză mai mică pe ploaie
+  const weatherPenalty = weather === "ploaie" ? 6.0 : 6.95; 
   const tireSpeedFactor =
     tires === "soft"
-      ? 1.03
+      ? 6.03
       : tires === "medium"
-      ? 1.0
+      ? 6.0
       : tires === "hard"
-      ? 0.97
+      ? 5.97
       : tires === "inters"
-      ? 0.95
-      :0.91;
-  const downforceFactor = downforce === "scăzut" ? 1.03 : downforce === "ridicat" ? 0.97 : 1.0; // Ajustare moderată pentru downforce
+      ? 5.95
+      :5.91;
+  const downforceFactor = downforce === "scăzut" ? 6.03 : downforce === "ridicat" ? 5.97 : 6.0; 
 
-  // Efect DRS
-  const drsSpeedBonus = drs_zones * 12.5; // Bonus fix între 10-15 km/h, medie 12.5 km/h
+  const drsSpeedBonus = drs_zones * 12.5; // viteza adaugata intre 10-15 km/h, medie 12.5 km/h
 
   // Calcul viteză maximă
-  const speedScalingFactor = 230; // Factor de scalare bazat pe valori reale (viteza în km/h)
+  // const speedScalingFactor = 230; 
   const maxSpeed =
-    (power / weight) * speedScalingFactor * tireSpeedFactor * downforceFactor * weatherPenalty + drsSpeedBonus;
+    (power / weight) * tireSpeedFactor * downforceFactor * weatherPenalty + drsSpeedBonus;
 
   // Calcul viteză medie
   const averageSpeed = maxSpeed * (1 - 0.01 * turns); // Penalizare pentru viraje
 
   // Calcul timp pe tur
   const lapTime =
-    (length_km / averageSpeed) * 3600 + // Timp bazat pe viteză medie
-    turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor); // Penalizări pentru viraje și vreme
+    (length_km / averageSpeed) * 3600 + 
+    turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor); 
 
   // Conversie timp în format minute:secunde.milisecunde
   const formatLapTime = (lapTime) => {
@@ -70,8 +68,8 @@ router.post("/", (req, res) => {
   const formattedLapTime = formatLapTime(lapTime);
 
   res.json({
-    lapTime: formattedLapTime, // Timp pe tur formatat
-    maxSpeed: maxSpeed.toFixed(2), // Viteza maximă
+    lapTime: formattedLapTime, 
+    maxSpeed: maxSpeed.toFixed(2), 
   });
 });
 

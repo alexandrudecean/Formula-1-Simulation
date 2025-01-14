@@ -16,6 +16,8 @@ app.use("/api/teams", teamsRoutes);
 const pdfRoutes = require("./routes/pdf");
 app.use("/api/generate-pdf", pdfRoutes);
 
+const driversRoutes = require("./routes/drivers");
+app.use("/api/drivers", driversRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Serverul rulează pe portul ${PORT}`));

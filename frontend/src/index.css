@@ -1,27 +1,20 @@
 html, body {
   font-family: 'Poppins', Arial, sans-serif;
   background-color: #101010;
+  background-color: #101010;
   color: #E5E5E5;
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: auto;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Navbar styling */
 .navbar {
   display: flex;
   align-items: center;
+  position: sticky;
   justify-content: space-between;
   background-color: #ff1500;
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1100;
   height: 60px;
 }
 
@@ -46,8 +39,20 @@ html, body {
   color: #000000;
 }
 
+.navbar.bg-danger {
+  background-color: #ff1500 !important; 
+}
 
-/* Footer styling */
+.navbar .nav-link.active {
+  color: #ffffff; 
+  font-weight: bold; 
+}
+
+.navbar .nav-link:hover {
+  color: #000000; 
+}
+
+
 footer {
   background-color: #1C1C1C;
   color: #FFFFFF;

@@ -3,13 +3,11 @@ import InputForm from "../components/InputForm";
 import "./SimulationPage.css";
 
 const SimulationPage = () => {
-  // State-uri pentru rezultatele simulării și datele utilizatorului
   const [results, setResults] = useState(null);
   const [formData, setFormData] = useState(null);
 
-  // Funcție pentru a simula performanța
   const handleSimulate = async (formData) => {
-    setFormData(formData); // Salvează datele utilizatorului
+    setFormData(formData); 
     const response = await fetch("/api/simulation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -19,7 +17,6 @@ const SimulationPage = () => {
     setResults(data);
   };
 
-  // Funcție pentru generarea PDF-ului
   const handleGeneratePDF = async () => {
     if (!formData || !results) {
       alert("Trebuie să completezi simularea înainte de a genera PDF-ul!");
@@ -27,8 +24,8 @@ const SimulationPage = () => {
     }
 
     const payload = {
-      ...results, // Include rezultatele simulării
-      ...formData, // Include datele selectate de utilizator
+      ...results, 
+      ...formData, 
     };
 
     const response = await fetch("http://localhost:5000/api/generate-pdf", {
@@ -37,7 +34,6 @@ const SimulationPage = () => {
       body: JSON.stringify(payload),
     });
 
-    // Descarcă fișierul
     const blob = await response.blob();
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");

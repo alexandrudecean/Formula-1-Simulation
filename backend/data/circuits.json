@@ -36,12 +36,6 @@
       "drs_zones": 2
   },
   {
-      "name": "Yas Marina",
-      "length_km": 5.281,
-      "turns": 16,
-      "drs_zones": 2
-  },
-  {
       "name": "Interlagos",
       "length_km": 4.309,
       "turns": 15,

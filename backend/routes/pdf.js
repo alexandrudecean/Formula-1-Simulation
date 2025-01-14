@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
   const selectedCircuit = circuits.find((c) => c.name === circuit);
   const { length_km, turns, drs_zones } = selectedCircuit;
 
-  // Caută echipa și modelul selectat
+  // Caută echipa si modelul selectat
   const selectedTeam = teams.find((t) => t.team === team);
   const selectedModel = selectedTeam.models.find((m) => m.name === model);
   const { power, weight } = selectedModel;
@@ -33,7 +33,6 @@ router.post("/", (req, res) => {
   doc.fontSize(24).text("Formula 1 Simulation Report", { align: "center" });
   doc.moveDown();
 
-  // Secțiune: Detalii utilizator
   doc.fontSize(16).text("Detalii Selectie Utilizator", { underline: true });
   doc.moveDown(0.5);
   doc.fontSize(12).text(`Echipa: ${team}`);
@@ -42,10 +41,9 @@ router.post("/", (req, res) => {
   doc.text(`Conditii Meteo: ${weather}`);
   doc.text(`Pneuri: ${tires}`);
   doc.moveDown();
-  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); // Linie separatoare
+  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); 
   doc.moveDown();
 
-  // Secțiune: Detalii Circuit
   doc.fontSize(16).text("Detalii Circuit", { underline: true });
   doc.moveDown(0.5);
   doc.fontSize(12).text(`Nume Circuit: ${circuit}`);
@@ -53,28 +51,25 @@ router.post("/", (req, res) => {
   doc.text(`Numar de viraje: ${turns}`);
   doc.text(`Zone DRS: ${drs_zones}`);
   doc.moveDown();
-  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); // Linie separatoare
+  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); 
   doc.moveDown();
 
-  // Secțiune: Detalii Model
   doc.fontSize(16).text("Detalii Model Selectat", { underline: true });
   doc.moveDown(0.5);
   doc.fontSize(12).text(`Putere Motor: ${power} CP`);
   doc.text(`Greutate: ${weight} kg`);
   doc.moveDown();
-  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); // Linie separatoare
+  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); 
   doc.moveDown();
 
-  // Secțiune: Rezultate Simulare
   doc.fontSize(16).text("Rezultate Simulare", { underline: true });
   doc.moveDown(0.5);
   doc.fontSize(12).text(`Timp pe Tur: ${lapTime} secunde`);
   doc.text(`Viteza Maxima: ${maxSpeed} km/h`);
   doc.moveDown();
-  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); // Linie separatoare
+  doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); 
   doc.moveDown();
 
-  // Încheie documentul
   doc.end();
 });
 

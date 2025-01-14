@@ -28,16 +28,16 @@ De asemenea, aplicația oferă informații detaliate despre piloții și circuit
 ## Instalare
 ### Backend
 1. Navighează în directorul `backend`:
-   cd backend
-        pentru instalarea dependentelor: npm install
-        pentru rularea serverului: node server.js
-        Serverul va rula pe http://localhost:5000
+   - cd backend
+        - pentru instalarea dependentelor: npm install
+        - pentru rularea serverului: node server.js
+        - Serverul va rula pe http://localhost:5000
 
 2. Navighează în directorul `frontend`:
-    cd frontend
-        pentru instalarea dependentelor: npm install
-        pentru rularea aplicatiei: npm start
-        Aplicația va fi disponibilă pe http://localhost:3000
+    - cd frontend
+        - pentru instalarea dependentelor: npm install
+        - pentru rularea aplicatiei: npm start
+        - Aplicația va fi disponibilă pe http://localhost:3000
 
 ## Utilizare
 - Accesează pagina principală (http://localhost:3000).

@@ -23,7 +23,7 @@ const InfoPage = () => {
     fetch("http://localhost:5000/api/drivers")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // Logăm datele pentru a verifica structura
+        console.log(data); 
         setDrivers(data);
       })
       .catch((err) => console.error("Eroare la preluarea datelor despre piloți", err));

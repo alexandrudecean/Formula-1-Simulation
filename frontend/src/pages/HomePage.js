@@ -10,7 +10,7 @@ const HomePage = () => {
       <div className="homepage-content">
         <h1 className="homepage-title">Formula 1 Simulation</h1>
         <p className="homepage-description">
-          Formula 1 este cel mai rapid sport pe patru roți, unde echipele și piloții își testează limitele pe cele mai dificile circuite din lume. O combinație de inovație tehnologică și performanță umană.
+          Formula 1 este cel mai rapid sport pe patru roți, unde echipele și piloții își testează limitele pe cele mai dificile circuite din lume. Este combinația dintre inovație și performanță omului.
         </p>
 
         <div className="simulation-section">

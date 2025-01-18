@@ -43,12 +43,11 @@ router.post("/", (req, res) => {
   const drsSpeedBonus = drs_zones * 12.5; // viteza adaugata intre 10-15 km/h, medie 12.5 km/h
 
   // Calcul viteză maximă
-  // const speedScalingFactor = 230; 
   const maxSpeed =
     (power / weight) * tireSpeedFactor * downforceFactor * weatherPenalty + drsSpeedBonus;
 
   // Calcul viteză medie
-  const averageSpeed = maxSpeed * (1 - 0.01 * turns); // Penalizare pentru viraje
+  const averageSpeed = maxSpeed * (1 - 0.02 * turns); // Penalizare pentru viraje
 
   // Calcul timp pe tur
   const lapTime =

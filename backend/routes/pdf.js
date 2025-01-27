@@ -8,13 +8,13 @@ const circuits = require("../data/circuits.json");
 const teams = require("../data/teams.json");
 
 router.post("/", (req, res) => {
-  const { lapTime, maxSpeed, circuit, team, model, downforce, weather, tires } = req.body;
+  const { lapTime, maxSpeed, bestLapTime, circuit, team, model, downforce, weather, tires } = req.body;
 
   // Caută circuitul selectat
   const selectedCircuit = circuits.find((c) => c.name === circuit);
   const { length_km, turns, drs_zones } = selectedCircuit;
 
-  // Caută echipa si modelul selectat
+  // Caută echipa și modelul selectat
   const selectedTeam = teams.find((t) => t.team === team);
   const selectedModel = selectedTeam.models.find((m) => m.name === model);
   const { power, weight } = selectedModel;
@@ -64,15 +64,14 @@ router.post("/", (req, res) => {
 
   doc.fontSize(16).text("Rezultate Simulare", { underline: true });
   doc.moveDown(0.5);
-  doc.fontSize(12).text(`Timp pe Tur: ${lapTime} secunde`);
-  doc.text(`Viteza Maxima: ${maxSpeed} km/h`);
+  doc.fontSize(12).text(`Timp pe Tur (Simulat): ${lapTime} secunde`);
+  doc.text(`Viteza Maxima (Simulata): ${maxSpeed} km/h`);
+  doc.text(`Timp pe Tur (Real): ${bestLapTime || "N/A"} secunde`);
   doc.moveDown();
   doc.moveTo(50, doc.y).lineTo(550, doc.y).stroke(); 
   doc.moveDown();
 
   doc.end();
 });
-
-
 
 module.exports = router;

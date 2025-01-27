@@ -29,30 +29,37 @@ router.post("/", (req, res) => {
 
   const weatherPenalty = weather === "ploaie" ? 6.0 : 6.75; 
   const tireSpeedFactor =
-    tires === "soft"
-      ? 6.03
-      : tires === "medium"
-      ? 6.0
-      : tires === "hard"
-      ? 5.97
-      : tires === "inters"
-      ? 5.95
-      :5.91;
-  const downforceFactor = downforce === "scăzut" ? 6.03 : downforce === "ridicat" ? 5.97 : 6.0; 
+  tires === "soft"
+    ? turns > 15
+      ? 6.04 // Penalizare mai mică pentru circuite tehnice
+      : 6.05
+    : tires === "medium"
+    ? 6.02
+    : tires === "hard"
+    ? turns > 15
+      ? 6.01 // Bonus pentru circuite tehnice
+      : 5.99
+    : tires === "inters"
+    ? 5.97
+    : 5.93;
 
-  const drsSpeedBonus = drs_zones * 12.5; // viteza adaugata intre 10-15 km/h, medie 12.5 km/h
+  const downforceFactor = downforce === "scăzut" ? 6.06 : downforce === "ridicat" ? 6.00 : 6.03; 
+
+  const drsSpeedBonus = drs_zones * (turns < 15 ? 15 : 12.5); 
+
+  const lengthFactor = length_km > 6 ? 0.97 : 1.0;
 
   // Calcul viteză maximă
   const maxSpeed =
     (power / weight) * tireSpeedFactor * downforceFactor * weatherPenalty + drsSpeedBonus;
 
   // Calcul viteză medie
-  const averageSpeed = maxSpeed * (1 - 0.02 * turns); // Penalizare pentru viraje
+  const averageSpeed = maxSpeed * (1 - 0.02 * turns) * lengthFactor; // Penalizare pentru viraje
 
   // Calcul timp pe tur
   const lapTime =
     (length_km / averageSpeed) * 3600 + 
-    turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor); 
+    turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor) * (turns > 20 ? 1.1 : 1.0); 
 
     // lungime circuit, viteza medie(putere, greutate, pneuri, downforce, conditii meteo si drs), viraje, greutate, conditii meteo, pneuri
 

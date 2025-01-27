@@ -127,14 +127,10 @@ const InputForm = ({ onSimulate }) => {
         <option value="Zandvoort">Zandvoort</option>
         <option value="Imola">Imola</option>
         <option value="Catalunya">Catalunya</option>
-        <option value="Jeddah">Jeddah</option>
         <option value="Miami">Miami</option>
         <option value="Las Vegas">Las Vegas</option>
         <option value="Austria (Red Bull Ring)">Austria (Red Bull Ring)</option>
         <option value="Baku">Baku</option>
-        <option value="Canada (Circuit Gilles Villeneuve)">
-          Canada (Circuit Gilles Villeneuve)
-        </option>
       </select>
       {errors.circuit && <div className="invalid-feedback">{errors.circuit}</div>}
 

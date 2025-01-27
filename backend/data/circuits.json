@@ -91,13 +91,6 @@
         "drs_zones": 2
     },
     {
-        "name": "Jeddah",
-        "apiName": "Saudi Arabian Grand Prix",
-        "length_km": 6.174,
-        "turns": 27,
-        "drs_zones": 3
-    },
-    {
         "name": "Miami",
         "apiName": "Miami Grand Prix",
         "length_km": 5.412,
@@ -124,13 +117,6 @@
         "length_km": 6.003,
         "turns": 20,
         "drs_zones": 2
-    },
-    {
-        "name": "Canada (Circuit Gilles Villeneuve)",
-        "apiName": "Canadian Grand Prix",
-        "length_km": 4.361,
-        "turns": 14,
-        "drs_zones": 3
     }
   ]
   

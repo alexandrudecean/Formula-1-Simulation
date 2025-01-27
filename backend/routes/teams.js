@@ -5,11 +5,11 @@ const fs = require("fs");
 const path = require("path");
 const TeamFactory = require("../factories/TeamFactory");
 
-// echipele din fișierul JSON si le genereaza dinamic.
+// Citește echipele din fișierul JSON și le generează dinamic
 const teamsFilePath = path.join(__dirname, "../data/teams.json");
 const rawTeamsData = JSON.parse(fs.readFileSync(teamsFilePath, "utf-8"));
 
-//Factory Pattern pentru a crea echipele.
+// Folosește Factory Pattern pentru a crea echipele
 const teams = rawTeamsData.map((teamData) =>
   TeamFactory.createTeam(
     teamData.team,
@@ -19,7 +19,7 @@ const teams = rawTeamsData.map((teamData) =>
   )
 );
 
-// Endpoint pentru a trimite echipele către frontend.
+// Endpoint pentru a trimite echipele către frontend
 router.get("/", (req, res) => {
   res.json(teams);
 });
@@ -29,10 +29,12 @@ router.get("/drivers", async (req, res) => {
   try {
     const currentYear = new Date().getFullYear();
     const driverData = [];
+
     for (let year = currentYear - 2; year <= currentYear; year++) {
       const response = await axios.get(`https://api.openf1.org/v1/drivers?season=${year}`);
       driverData.push(...response.data);
     }
+
     res.json(driverData);
   } catch (error) {
     console.error("Eroare la preluarea datelor despre piloți:", error);
@@ -40,7 +42,7 @@ router.get("/drivers", async (req, res) => {
   }
 });
 
-
+// Endpoint pentru a obține timp pe tur din API-ul Ergast
 router.get("/lap-time", async (req, res) => {
   const { team, model, circuit } = req.query;
 
@@ -54,7 +56,7 @@ router.get("/lap-time", async (req, res) => {
 
     const selectedCircuit = circuitsData.find((c) => c.name === circuit);
     const selectedTeam = teamsData.find((t) => t.team === team);
-    const selectedModel = selectedTeam.models.find((m) => m.name === model);
+    const selectedModel = selectedTeam?.models.find((m) => m.name === model);
 
     if (!selectedCircuit || !selectedModel) {
       return res.status(404).json({
@@ -62,28 +64,44 @@ router.get("/lap-time", async (req, res) => {
       });
     }
 
-    const { round } = selectedCircuit;
     const { season } = selectedModel;
-    const apiId = selectedTeam.apiId; 
 
-    const response = await axios.get(
-      `https://ergast.com/api/f1/${season}/${round}/constructors/${apiId}/qualifying.json`
+    // Obține programul complet pentru sezonul selectat
+    const scheduleResponse = await axios.get(
+      `https://ergast.com/api/f1/${season}.json`
+    );
+    const races = scheduleResponse.data.MRData.RaceTable.Races;
+
+    // Găsește cursa corespunzătoare circuitului selectat
+    const race = races.find((r) =>
+      r.raceName.toLowerCase().includes(selectedCircuit.apiName.toLowerCase())
     );
 
-    const qualifyingData = response.data.MRData.RaceTable.Races[0]?.QualifyingResults;
+    if (!race) {
+      return res.status(404).json({
+        error: "Cursa nu a fost găsită pentru acest circuit și sezon.",
+      });
+    }
+
+    const round = race.round;
+
+    // Obține datele de calificare pentru runda respectivă
+    const qualifyingResponse = await axios.get(
+      `https://ergast.com/api/f1/${season}/${round}/constructors/${selectedTeam.apiId}/qualifying.json`
+    );
+
+    const qualifyingData =
+      qualifyingResponse.data.MRData.RaceTable.Races[0]?.QualifyingResults;
+
     const bestLapTime = qualifyingData
       ? qualifyingData.find((result) => result.Q3)?.Q3
       : null;
 
-    res.json({ bestLapTime });
+    res.json({ bestLapTime: bestLapTime || "Timp indisponibil" });
   } catch (error) {
     console.error("Eroare la preluarea timpului real pe tur:", error);
     res.status(500).json({ error: "Eroare la preluarea timpului real pe tur." });
   }
 });
-
-
-
-
 
 module.exports = router;

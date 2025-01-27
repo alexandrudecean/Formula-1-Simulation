@@ -120,7 +120,6 @@ const InputForm = ({ onSimulate }) => {
         <option value="Monza">Monza</option>
         <option value="Suzuka">Suzuka</option>
         <option value="Circuit of the Americas">Circuit of the Americas</option>
-        <option value="Yas Marina">Yas Marina</option>
         <option value="Interlagos">Interlagos</option>
         <option value="Bahrain">Bahrain</option>
         <option value="Hungaroring">Hungaroring</option>

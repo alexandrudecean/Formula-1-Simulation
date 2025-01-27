@@ -1,135 +1,136 @@
 [
-  {
-      "name": "Silverstone",
-      "length_km": 5.891,
-      "turns": 18,
-      "drs_zones": 2,
-      "round": 10
-  },
-  {
-      "name": "Monaco",
-      "length_km": 3.337,
-      "turns": 19,
-      "drs_zones": 1,
-      "round": 7
-  },
-  {
-      "name": "Spa-Francorchamps",
-      "length_km": 7.004,
-      "turns": 20,
-      "drs_zones": 2,
-      "round": 12
-  },
-  {
-      "name": "Monza",
-      "length_km": 5.793,
-      "turns": 11,
-      "drs_zones": 2,
-      "round": 14
-  },
-  {
-      "name": "Suzuka",
-      "length_km": 5.807,
-      "turns": 18,
-      "drs_zones": 1,
-      "round": 17
-  },
-  {
-      "name": "Circuit of the Americas",
-      "length_km": 5.513,
-      "turns": 20,
-      "drs_zones": 2,
-      "round": 19
-  },
-  {
-      "name": "Interlagos",
-      "length_km": 4.309,
-      "turns": 15,
-      "drs_zones": 2,
-      "round": 21
-  },
-  {
-      "name": "Bahrain",
-      "length_km": 5.412,
-      "turns": 15,
-      "drs_zones": 3,
-      "round": 1
-  },
-  {
-      "name": "Hungaroring",
-      "length_km": 4.381,
-      "turns": 14,
-      "drs_zones": 1,
-      "round": 13
-  },
-  {
-      "name": "Marina Bay",
-      "length_km": 4.940,
-      "turns": 23,
-      "drs_zones": 2,
-      "round": 16
-  },
-  {
-      "name": "Zandvoort",
-      "length_km": 4.259,
-      "turns": 14,
-      "drs_zones": 2,
-      "round": 15
-  },
-  {
-      "name": "Imola",
-      "length_km": 4.909,
-      "turns": 19,
-      "drs_zones": 1,
-      "round": 6
-  },
-  {
-      "name": "Catalunya",
-      "length_km": 4.675,
-      "turns": 16,
-      "drs_zones": 2,
-      "round": 9
-  },
-  {
-      "name": "Jeddah",
-      "length_km": 6.174,
-      "turns": 27,
-      "drs_zones": 3,
-      "round": 2
-  },
-  {
-      "name": "Miami",
-      "length_km": 5.412,
-      "turns": 19,
-      "drs_zones": 3,
-      "round": 5
-  },
-  {
-      "name": "Las Vegas",
-      "length_km": 6.120,
-      "turns": 17,
-      "drs_zones": 2,
-      "round": 20
-  },
-  {
-      "name": "Austria (Red Bull Ring)",
-      "length_km": 4.318,
-      "turns": 10,
-      "drs_zones": 3,
-      "round": 11
-  },
-  {
-      "name": "Baku",
-      "length_km": 6.003,
-      "turns": 20,
-      "drs_zones": 2,
-      "round": 4
-  },
-  {
-      "name": "Canada (Circuit Gilles Villeneuve)",
-      "length_km": 4.361,
-      "turns": 14,
-      "drs_zones": 3,
-      "round": 8
-  }
-]
+    {
+        "name": "Silverstone",
+        "apiName": "British Grand Prix",
+        "length_km": 5.891,
+        "turns": 18,
+        "drs_zones": 2
+    },
+    {
+        "name": "Monaco",
+        "apiName": "Monaco Grand Prix",
+        "length_km": 3.337,
+        "turns": 19,
+        "drs_zones": 1
+    },
+    {
+        "name": "Spa-Francorchamps",
+        "apiName": "Belgian Grand Prix",
+        "length_km": 7.004,
+        "turns": 20,
+        "drs_zones": 2
+    },
+    {
+        "name": "Monza",
+        "apiName": "Italian Grand Prix",
+        "length_km": 5.793,
+        "turns": 11,
+        "drs_zones": 2
+    },
+    {
+        "name": "Suzuka",
+        "apiName": "Japanese Grand Prix",
+        "length_km": 5.807,
+        "turns": 18,
+        "drs_zones": 1
+    },
+    {
+        "name": "Circuit of the Americas",
+        "apiName": "United States Grand Prix",
+        "length_km": 5.513,
+        "turns": 20,
+        "drs_zones": 2
+    },
+    {
+        "name": "Interlagos",
+        "apiName": "São Paulo Grand Prix",
+        "length_km": 4.309,
+        "turns": 15,
+        "drs_zones": 2
+    },
+    {
+        "name": "Bahrain",
+        "apiName": "Bahrain Grand Prix",
+        "length_km": 5.412,
+        "turns": 15,
+        "drs_zones": 3
+    },
+    {
+        "name": "Hungaroring",
+        "apiName": "Hungarian Grand Prix",
+        "length_km": 4.381,
+        "turns": 14,
+        "drs_zones": 1
+    },
+    {
+        "name": "Marina Bay",
+        "apiName": "Singapore Grand Prix",
+        "length_km": 4.940,
+        "turns": 23,
+        "drs_zones": 2
+    },
+    {
+        "name": "Zandvoort",
+        "apiName": "Dutch Grand Prix",
+        "length_km": 4.259,
+        "turns": 14,
+        "drs_zones": 2
+    },
+    {
+        "name": "Imola",
+        "apiName": "Emilia Romagna Grand Prix",
+        "length_km": 4.909,
+        "turns": 19,
+        "drs_zones": 1
+    },
+    {
+        "name": "Catalunya",
+        "apiName": "Spanish Grand Prix",
+        "length_km": 4.675,
+        "turns": 16,
+        "drs_zones": 2
+    },
+    {
+        "name": "Jeddah",
+        "apiName": "Saudi Arabian Grand Prix",
+        "length_km": 6.174,
+        "turns": 27,
+        "drs_zones": 3
+    },
+    {
+        "name": "Miami",
+        "apiName": "Miami Grand Prix",
+        "length_km": 5.412,
+        "turns": 19,
+        "drs_zones": 3
+    },
+    {
+        "name": "Las Vegas",
+        "apiName": "Las Vegas Grand Prix",
+        "length_km": 6.120,
+        "turns": 17,
+        "drs_zones": 2
+    },
+    {
+        "name": "Austria (Red Bull Ring)",
+        "apiName": "Austrian Grand Prix",
+        "length_km": 4.318,
+        "turns": 10,
+        "drs_zones": 3
+    },
+    {
+        "name": "Baku",
+        "apiName": "Azerbaijan Grand Prix",
+        "length_km": 6.003,
+        "turns": 20,
+        "drs_zones": 2
+    },
+    {
+        "name": "Canada (Circuit Gilles Villeneuve)",
+        "apiName": "Canadian Grand Prix",
+        "length_km": 4.361,
+        "turns": 14,
+        "drs_zones": 3
+    }
+  ]
+  

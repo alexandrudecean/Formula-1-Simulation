@@ -54,7 +54,7 @@ router.get("/lap-time", async (req, res) => {
 
     const selectedCircuit = circuitsData.find((c) => c.name === circuit);
     const selectedTeam = teamsData.find((t) => t.team === team);
-    const selectedModel = selectedTeam?.models.find((m) => m.name === model);
+    const selectedModel = selectedTeam.models.find((m) => m.name === model);
 
     if (!selectedCircuit || !selectedModel) {
       return res.status(404).json({
@@ -64,22 +64,18 @@ router.get("/lap-time", async (req, res) => {
 
     const { round } = selectedCircuit;
     const { season } = selectedModel;
+    const apiId = selectedTeam.apiId; 
 
     const response = await axios.get(
-      `https://ergast.com/api/f1/${season}/${round}/constructors/${team}/qualifying.json`
+      `https://ergast.com/api/f1/${season}/${round}/constructors/${apiId}/qualifying.json`
     );
 
-    // extrage timpul cel mai bun din Q3
     const qualifyingData = response.data.MRData.RaceTable.Races[0]?.QualifyingResults;
     const bestLapTime = qualifyingData
       ? qualifyingData.find((result) => result.Q3)?.Q3
       : null;
 
-    res.json({
-      bestLapTime: bestLapTime || "N/A",
-      season,
-      circuit: selectedCircuit.name,
-    });
+    res.json({ bestLapTime });
   } catch (error) {
     console.error("Eroare la preluarea timpului real pe tur:", error);
     res.status(500).json({ error: "Eroare la preluarea timpului real pe tur." });

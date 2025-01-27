@@ -25,7 +25,7 @@ const SimulationPage = () => {
 
     setResults({
       ...simulationData,
-      bestLapTime: lapTimeData.bestLapTime || "N/A"
+      bestLapTime: lapTimeData.bestLapTime || null,
     });
   };
 
@@ -80,7 +80,10 @@ const SimulationPage = () => {
             <strong>Viteză Maximă (Simulată):</strong> {results.maxSpeed} km/h
           </p>
           <p>
-            <strong>Timp pe Tur (Real):</strong> {results.bestLapTime} secunde
+            <strong>Timp pe Tur (Real):</strong>{" "}
+            {results.bestLapTime
+              ? `${results.bestLapTime} secunde`
+              : "Timpul real pe tur nu este disponibil"}
           </p>
           <button className="button-primary" onClick={handleGeneratePDF}>
             Descarcă Raportul PDF

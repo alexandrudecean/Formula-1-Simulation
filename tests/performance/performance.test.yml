@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:5000" 
+  phases:
+    - duration: 60 
+      arrivalRate: 10 
+scenarios:
+  - flow:
+      - get:
+          url: "/api/teams"
+      - get:
+          url: "/api/drivers"
+      - post:
+          url: "/api/simulation"
+          json:
+            team: "Mercedes"
+            model: "W15"
+            downforce: "ridicat"
+            circuit: "Monaco"
+            weather: "soare"
+            tires: "soft"

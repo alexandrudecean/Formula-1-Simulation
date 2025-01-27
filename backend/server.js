@@ -19,5 +19,9 @@ app.use("/api/generate-pdf", pdfRoutes);
 const driversRoutes = require("./routes/drivers");
 app.use("/api/drivers", driversRoutes);
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Serverul rulează pe portul ${PORT}`));
+if (process.env.NODE_ENV !== "test") {
+    const PORT = 5000;
+    app.listen(PORT, () => console.log(`Serverul rulează pe portul ${PORT}`));
+  }
+  
+  module.exports = app;

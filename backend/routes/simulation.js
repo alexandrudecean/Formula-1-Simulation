@@ -61,8 +61,6 @@ router.post("/", (req, res) => {
     (length_km / averageSpeed) * 3600 + 
     turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor) * (turns > 20 ? 1.1 : 1.0); 
 
-    // lungime circuit, viteza medie(putere, greutate, pneuri, downforce, conditii meteo si drs), viraje, greutate, conditii meteo, pneuri
-
   // Conversie timp în format minute:secunde.milisecunde
   const formatLapTime = (lapTime) => {
     const minutes = Math.floor(lapTime / 60);

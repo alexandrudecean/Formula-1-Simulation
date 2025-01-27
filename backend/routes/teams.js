@@ -5,11 +5,11 @@ const fs = require("fs");
 const path = require("path");
 const TeamFactory = require("../factories/TeamFactory");
 
-// Citește echipele din fișierul JSON si le genereaza dinamic.
+// echipele din fișierul JSON si le genereaza dinamic.
 const teamsFilePath = path.join(__dirname, "../data/teams.json");
 const rawTeamsData = JSON.parse(fs.readFileSync(teamsFilePath, "utf-8"));
 
-// Folosește Factory Pattern pentru a crea echipele.
+//Factory Pattern pentru a crea echipele.
 const teams = rawTeamsData.map((teamData) =>
   TeamFactory.createTeam(
     teamData.team,
@@ -39,6 +39,55 @@ router.get("/drivers", async (req, res) => {
     res.status(500).json({ error: "Eroare la preluarea datelor despre piloți" });
   }
 });
+
+
+router.get("/lap-time", async (req, res) => {
+  const { team, model, circuit } = req.query;
+
+  try {
+    const circuitsData = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "../data/circuits.json"), "utf-8")
+    );
+    const teamsData = JSON.parse(
+      fs.readFileSync(path.join(__dirname, "../data/teams.json"), "utf-8")
+    );
+
+    const selectedCircuit = circuitsData.find((c) => c.name === circuit);
+    const selectedTeam = teamsData.find((t) => t.team === team);
+    const selectedModel = selectedTeam?.models.find((m) => m.name === model);
+
+    if (!selectedCircuit || !selectedModel) {
+      return res.status(404).json({
+        error: "Circuitul sau modelul specificat nu a fost găsit în datele noastre.",
+      });
+    }
+
+    const { round } = selectedCircuit;
+    const { season } = selectedModel;
+
+    const response = await axios.get(
+      `https://ergast.com/api/f1/${season}/${round}/constructors/${team}/qualifying.json`
+    );
+
+    // extrage timpul cel mai bun din Q3
+    const qualifyingData = response.data.MRData.RaceTable.Races[0]?.QualifyingResults;
+    const bestLapTime = qualifyingData
+      ? qualifyingData.find((result) => result.Q3)?.Q3
+      : null;
+
+    res.json({
+      bestLapTime: bestLapTime || "N/A",
+      season,
+      circuit: selectedCircuit.name,
+    });
+  } catch (error) {
+    console.error("Eroare la preluarea timpului real pe tur:", error);
+    res.status(500).json({ error: "Eroare la preluarea timpului real pe tur." });
+  }
+});
+
+
+
 
 
 module.exports = router;

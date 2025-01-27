@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
 
   const { length_km, turns, drs_zones } = selectedCircuit;
 
-  const weatherPenalty = weather === "ploaie" ? 6.0 : 6.95; 
+  const weatherPenalty = weather === "ploaie" ? 6.0 : 6.75; 
   const tireSpeedFactor =
     tires === "soft"
       ? 6.03
@@ -53,6 +53,8 @@ router.post("/", (req, res) => {
   const lapTime =
     (length_km / averageSpeed) * 3600 + 
     turns * (weight / 800) * (weather === "ploaie" ? 1.2 : 1.0) * (1 / tireSpeedFactor); 
+
+    // lungime circuit, viteza medie(putere, greutate, pneuri, downforce, conditii meteo si drs), viraje, greutate, conditii meteo, pneuri
 
   // Conversie timp în format minute:secunde.milisecunde
   const formatLapTime = (lapTime) => {

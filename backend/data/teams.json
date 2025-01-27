@@ -2,81 +2,81 @@
     {
       "team": "Mercedes",
       "models": [
-        { "name": "W14", "power": 1060, "weight": 798 },
-        { "name": "W13", "power": 1040, "weight": 798 },
-        { "name": "W12", "power": 1015, "weight": 753 }
+        { "name": "W15", "power": 1060, "weight": 798, "season": 2024 },
+        { "name": "W14", "power": 1040, "weight": 798, "season": 2023 },
+        { "name": "W13", "power": 1015, "weight": 753, "season": 2022 }
       ]
     },
     {
       "team": "Red Bull Racing",
       "models": [
-        { "name": "RB19", "power": 1080, "weight": 798 },
-        { "name": "RB18", "power": 1065, "weight": 800 },
-        { "name": "RB16B", "power": 1045, "weight": 755 }
+        { "name": "RB19", "power": 1080, "weight": 798, "season": 2024 },
+        { "name": "RB18", "power": 1065, "weight": 800, "season": 2023 },
+        { "name": "RB16B", "power": 1045, "weight": 755, "season": 2022 }
       ]
     },
     {
       "team": "Ferrari",
       "models": [
-        { "name": "SF-23", "power": 1055, "weight": 799 },
-        { "name": "F1-75", "power": 1035, "weight": 801 },
-        { "name": "SF21", "power": 1010, "weight": 754 }
+        { "name": "SF-23", "power": 1055, "weight": 799, "season": 2024 },
+        { "name": "F1-75", "power": 1035, "weight": 801, "season": 2023 },
+        { "name": "SF21", "power": 1010, "weight": 754, "season": 2022 }
       ]
     },
     {
       "team": "McLaren",
       "models": [
-        { "name": "MCL60", "power": 1040, "weight": 800 },
-        { "name": "MCL36", "power": 1030, "weight": 802 },
-        { "name": "MCL35M", "power": 1015, "weight": 756 }
+        { "name": "MCL60", "power": 1040, "weight": 800, "season": 2024 },
+        { "name": "MCL36", "power": 1030, "weight": 802, "season": 2023 },
+        { "name": "MCL35M", "power": 1015, "weight": 756, "season": 2022 }
       ]
     },
     {
       "team": "Alpine",
       "models": [
-        { "name": "A523", "power": 1035, "weight": 800 },
-        { "name": "A522", "power": 1025, "weight": 801 },
-        { "name": "A521", "power": 1010, "weight": 757 }
+        { "name": "A523", "power": 1035, "weight": 800, "season": 2024 },
+        { "name": "A522", "power": 1025, "weight": 801, "season": 2023 },
+        { "name": "A521", "power": 1010, "weight": 757, "season": 2022 }
       ]
     },
     {
       "team": "Aston Martin",
       "models": [
-        { "name": "AMR23", "power": 1045, "weight": 799 },
-        { "name": "AMR22", "power": 1030, "weight": 801 },
-        { "name": "AMR21", "power": 1015, "weight": 755 }
+        { "name": "AMR23", "power": 1045, "weight": 799, "season": 2024 },
+        { "name": "AMR22", "power": 1030, "weight": 801, "season": 2023 },
+        { "name": "AMR21", "power": 1015, "weight": 755, "season": 2022 }
       ]
     },
     {
       "team": "Haas",
       "models": [
-        { "name": "VF-23", "power": 1030, "weight": 799 },
-        { "name": "VF-22", "power": 1020, "weight": 800 },
-        { "name": "VF-21", "power": 1005, "weight": 753 }
+        { "name": "VF-23", "power": 1030, "weight": 799, "season": 2024 },
+        { "name": "VF-22", "power": 1020, "weight": 800, "season": 2023 },
+        { "name": "VF-21", "power": 1005, "weight": 753, "season": 2022 }
       ]
     },
     {
       "team": "Kick Sauber",
       "models": [
-        { "name": "C43", "power": 1040, "weight": 800 },
-        { "name": "C42", "power": 1030, "weight": 801 },
-        { "name": "C41", "power": 1015, "weight": 755 }
+        { "name": "C43", "power": 1040, "weight": 800, "season": 2024 },
+        { "name": "C42", "power": 1030, "weight": 801, "season": 2023 },
+        { "name": "C41", "power": 1015, "weight": 755, "season": 2022 }
       ]
     },
     {
       "team": "RB",
       "models": [
-        { "name": "AT04", "power": 1035, "weight": 800 },
-        { "name": "AT03", "power": 1025, "weight": 802 },
-        { "name": "AT02", "power": 1010, "weight": 756 }
+        { "name": "AT04", "power": 1035, "weight": 800, "season": 2024 },
+        { "name": "AT03", "power": 1025, "weight": 802, "season": 2023 },
+        { "name": "AT02", "power": 1010, "weight": 756, "season": 2022 }
       ]
     },
     {
       "team": "Williams",
       "models": [
-        { "name": "FW45", "power": 1025, "weight": 799 },
-        { "name": "FW44", "power": 1015, "weight": 800 },
-        { "name": "FW43B", "power": 1005, "weight": 753 }
+        { "name": "FW45", "power": 1025, "weight": 799, "season": 2024 },
+        { "name": "FW44", "power": 1015, "weight": 800, "season": 2023 },
+        { "name": "FW43B", "power": 1005, "weight": 753, "season": 2022 }
       ]
     }
 ]

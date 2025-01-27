@@ -7,14 +7,26 @@ const SimulationPage = () => {
   const [formData, setFormData] = useState(null);
 
   const handleSimulate = async (formData) => {
-    setFormData(formData); 
+    setFormData(formData);
+
+    // Preluare date simulate
     const response = await fetch("/api/simulation", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-    const data = await response.json();
-    setResults(data);
+    const simulationData = await response.json();
+
+    // Preluare timp real pe tur din API extern
+    const lapTimeResponse = await fetch(
+      `/api/teams/lap-time?team=${formData.team}&model=${formData.model}&circuit=${formData.circuit}`
+    );
+    const lapTimeData = await lapTimeResponse.json();
+
+    setResults({
+      ...simulationData,
+      bestLapTime: lapTimeData.bestLapTime || "N/A"
+    });
   };
 
   const handleGeneratePDF = async () => {
@@ -24,8 +36,8 @@ const SimulationPage = () => {
     }
 
     const payload = {
-      ...results, 
-      ...formData, 
+      ...results,
+      ...formData,
     };
 
     const response = await fetch("http://localhost:5000/api/generate-pdf", {
@@ -50,7 +62,7 @@ const SimulationPage = () => {
         <h2>Bun venit la Simularea Performanței Formula 1</h2>
         <p>
           Această aplicație vă permite să evaluați performanța unui monopost
-          pe diferite circuite, în funcție de parametrii specifici ai modelului ales si de datele selectate.
+          pe diferite circuite, în funcție de parametrii specifici ai modelului ales și de datele selectate.
           Introduceți datele în formularul de mai jos și descoperiți timpul pe
           tur și viteza maximă simulată!
         </p>
@@ -62,10 +74,13 @@ const SimulationPage = () => {
         <div className="results-card">
           <h2>Rezultate Simulare</h2>
           <p>
-            <strong>Timp pe Tur:</strong> {results.lapTime} secunde
+            <strong>Timp pe Tur (Simulat):</strong> {results.lapTime} secunde
           </p>
           <p>
-            <strong>Viteză Maximă:</strong> {results.maxSpeed} km/h
+            <strong>Viteză Maximă (Simulată):</strong> {results.maxSpeed} km/h
+          </p>
+          <p>
+            <strong>Timp pe Tur (Real):</strong> {results.bestLapTime} secunde
           </p>
           <button className="button-primary" onClick={handleGeneratePDF}>
             Descarcă Raportul PDF

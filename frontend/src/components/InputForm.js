@@ -102,7 +102,7 @@ const InputForm = ({ onSimulate }) => {
         required
       >
         <option value="">Selectează downforce</option>
-        <option value="scăzut">Scăzut</option>
+        <option value="scazut">Scăzut</option>
         <option value="mediu">Mediu</option>
         <option value="ridicat">Ridicat</option>
       </select>

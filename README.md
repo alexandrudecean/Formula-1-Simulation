@@ -46,12 +46,33 @@ De asemenea, aplicația oferă informații detaliate despre piloții și circuit
 - Simulare: Completează formularul pentru a simula performanța unui monopost.
 - Informații: Află detalii despre circuite, pneuri și piloți.
 
+## Testare
+Proiectul include mai multe tipuri de teste care pot fi rulate.
+
+1. Teste Unitare
+   - Este verificata functionalitatea unor componente individuale precum InputForm si TeamFactory
+   - Se pot rula cu comanda `npm test`
+
+2. Teste de integrare
+   - Testeaza API-urile backend, cum ar fi /api/simulation si /api/pdf
+   - Verifica raspunsurile API-ului la cereri valide si situatii de eroare.
+   - Se pot rula cu comanda `npm test`
+
+3. Test de performanta
+   - Evalueaza cat de bine gestioneaza serverul backend o sarcina mare (cereri multiple)
+   - Pentru rulare se foloseste comanda `npm run performance`
+
 ## Structură proiect
 - `backend/` - Conține serverul și logica backend, inclusiv conexiunea cu API-uri externe.
 - `frontend/` - Conține aplicația React pentru interfața utilizatorului.
 - `tests/` - Conține testele pentru funcționalitățile principale.
 - `package.json` - Fișier de configurare pentru dependențe.
 
+## API Extern
+- Proiectul foloseste Ergast Developer API pentru a prelua informatii despre pilotii activi din Formula 1 si timpii reali pe tur pentru comparatie.
+- Endpoint-uri utilizate:
+   - Pentru informatii despre piloti: `https://ergast.com/api/f1/current/drivers.json`
+   - Pentru timpi reali pe tur: `https://ergast.com/api/f1/{season}/{round}/laps.json`
 
 ## Bibliografie folosită
 1. Date API externe: Ergast Developer API
